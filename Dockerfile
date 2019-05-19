@@ -300,6 +300,8 @@ COPY calibre-init /init/calibre-init
 # copy patched version of ImageMagick policy.xml
 COPY imagemagick/policy.xml /etc/ImageMagick-6
 
+RUN chown $PUSER:$PGROUP -R /books
+
 # Set volumes for the Calibre Web folder structure
 VOLUME /books
 VOLUME $APP_HOME/app
